@@ -1,3 +1,4 @@
+
 //Question: write a function called same that accepts 2-arrays. the fuction should return true if every value in the array has its corresponding value squared in the second array
 // such that
 // same([1,2,3],(4,1,9)) //true
