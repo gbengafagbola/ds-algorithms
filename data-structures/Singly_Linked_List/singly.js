@@ -1,7 +1,7 @@
-class Node{
+class Node{                               // defining our Node class of which would be instantiated in the SinglyLinkedClass where we define a node in a list of nodes
     constructor(val){
-        this.val = val;
-        this.next = null;
+        this.val = val;                   // refrencing the value of the passed argument as the value of the node
+        this.next = null;                 // intially we have no next node so we set to null
     }
 }
 
@@ -29,7 +29,7 @@ class SinglyLinkedList {
     }
 
     pop(){
-        if(!this.head) return undefined;   //#edgecase
+        if(!this.head) return undefined;   // #edgecase
         
         var scout = this.head;
         var upcomingTail = scout;
@@ -53,7 +53,7 @@ class SinglyLinkedList {
         if(!this.head) return undefined;    //#edgecase
 
         var currentHead = this.head;       // instantiate the current head we want to remove
-        this.head = currentHead.next;       // set the new head to the next item in the list
+        this.head = currentHead.next;      // set the new head to the next item in the list
         this.length--;                     // remeber to decrement the length
         if(this.length === 0){             // if the length of the list is 0 then set tail to null #edgecase
             this.tail = null;
@@ -74,6 +74,21 @@ class SinglyLinkedList {
         }
         this.length++;
         return this;
+    }
+
+    get(val){
+
+        if (val < 0 || val >= this.length) return null; 
+
+        var count = 0;                    // initialize count to keep track of what we searching for
+        var node = this.head;             // also creating a variable to help keep track from the first item in the list which happens to be the head
+
+        while(count !== val){             // while the index value we are looking for dosen't correspond with the counter we would continue looping through the list
+            node = node.next;             // since we haven't gotten the index of the value we are looking for we set the current node to the next one as a way of working our way down the list
+            count++;                      // of course we icrement count 
+        }
+
+        return node;                     // finally we return our node
     }
 
 }
