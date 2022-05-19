@@ -62,6 +62,20 @@ class SinglyLinkedList {
 
     }
 
+    unshift(val){
+        var newHead = new Node(val);
+
+        if(!this.head){                    // or if(this.head === null) {if there is no element yet then set the head to the value and tail to the head } #edgecase
+            this.head = newHead;
+            this.tail = this.head;         // same as setting both head and tail initially to the newNode
+        } else {                           // if there is an head i.e the list is not empty then  
+            newHead.next = this.head;      // we point the incoming node we want to add as the new head (to create a connection)
+            this.head = newHead;           // we update the tail to ensure it points to the newNode
+        }
+        this.length++;
+        return this;
+    }
+
 }
 
 
