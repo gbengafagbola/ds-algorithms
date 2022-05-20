@@ -117,6 +117,19 @@ class SinglyLinkedList {
         return true;
     }
 
+    delete(index){
+        if(index < 0 || index > this.length) return false;          // #edgecace
+
+        if(index === 0) return !!this.shift(val);                 // make use of the predefined unshift method to put a node at the head of a list and return a boolean value of either true or false with the help of the !! double negate value
+        if(index === this.length -1) return !!this.pop(val);       // using push method to add to the end of a list returning a boolean which can also be written as if(index === this.length -1){ this.push(val); return true};
+
+        var preNode = this.get(index-1);                            // we ake use of the get method defined above to check if the index exist, which would return a boolean value of yes or no and save as the preceding node 
+        var currentNode = preNode.next;
+
+        preNode.next = currentNode.next;
+        this.length--;
+        return true;
+    }
 
 }
 
