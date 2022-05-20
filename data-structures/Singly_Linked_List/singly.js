@@ -91,6 +91,19 @@ class SinglyLinkedList {
         return node;                     // finally we return our node
     }
 
+    set(index, val){
+        var foundNode = this.get(index); // we ake use of the get function defined above to check if the index exist, which would return a boolean value of yes or no
+
+        if(foundNode){                   // if the index exists, replace the node at the index with the new passed in value
+            foundNode.val = val;
+            return true                  // return a true stateent
+        }
+
+        return false;                    // if index not found return false
+    }
+
+
+
 }
 
 
