@@ -132,19 +132,19 @@ class SinglyLinkedList {
     }
 
     reverse(){
-        var node = this.head;
-        this.head = this.tail;
-        this.tail = node;
+        var node = this.head;                                     // we initialize the node at the head in other to swap the head and tail
+        this.head = this.tail;                                    //  swapping..
+        this.tail = node;                                         // swapping... tail is now head
 
-        var prev = null;
-        var next;
+        var prev = null;                                          // tail.next has to be null
+        var next;                                                 // next is initialized
         
-        for(i = 0; i < this.length; i++){
-            next = node.next;
-            node.next = prev;
+        for(var i = 0; i < this.length; i++){
+            next = node.next;                                     // we have to set the next as the next-in-line node from the present node
+            node.next = prev;                                     // in other to have the right relationship, we have to ensure the current node points to the next value which happens to be the previous node
 
-            prev = node;
-            node = next
+            prev = node;                                          // now we set the previous node as the node we are looking at
+            node = next                                           // and we set the node to the next item
         }
 
         return this;
