@@ -174,3 +174,12 @@ list.push(2)
 list.push(3)
 list.push(4)
 list.push(5)
+
+
+
+
+// BIG O
+// Insertion: O(1)
+// Removal: Best O(1) Worst 0(N)
+// Searching: O(N)
+// Access: O(N)
