@@ -76,6 +76,46 @@ class DoublyLinkedList {                               // doubly linked class
     // }  
 
 
+
+    shift(){
+        if(this.length === 0) return undefined;         // if the list is empty return undefined. nothing to pop
+        
+        var shiftedHead = this.head;                    // the about to be exiled head
+
+        if(this.length === 1){                          // if the list has one item, set head & tail to null
+            this.head = null;
+            this.tail = null;
+        } else {
+
+            var newHead = this.head.next;                // the to be head would be the next of the currrent head
+            this.head.next = null;                       // we have to sever the tie to the next by making it null
+            newHead.prev = null;                         // also for the newHead by making the prev null
+            this.head = newHead;                         // then we make the head the newHead
+        }
+        this.length--;                                   // decrement 
+        return shiftedHead;                              // return the shifted head
+    }
+
+
+
+    // shift(){
+
+    //     if(this.length === 0) return undefined;         // if the list is empty return undefined. nothing to pop
+        
+    //     var oldHead = this.head;
+
+    //     if(this.length === 1){                          // if the list has one item, set head & tail to null
+    //         this.head = null;
+    //         this.tail = null;
+    //     } 
+    //         this.head = oldHead.next;
+    //         this.head.prev = null;
+    //         oldHead.next = null;
+            
+    //         this.length--;                               // decrement 
+    //         return shiftedHead;                          // return the shifted head
+    // }
+    
     print(){
         var arr = [];
         var current = this.head;
