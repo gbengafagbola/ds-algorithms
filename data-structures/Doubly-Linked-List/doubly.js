@@ -36,10 +36,44 @@ class DoublyLinkedList {                               // doubly linked class
     }
 
 
+    pop(){
+        if(this.length === 0) return undefined;         // if the list is empty return undefined. nothing to pop
+
+        if(this.length === 1){                          // if the list has one item, set head & tail to null
+            this.head = null;
+            this.tail = null;
+        } else {
+            var poppedTail = this.tail;
+            var newTail = this.tail.prev;               // store the node before the current tale inside a variable as the new tail
+            newTail.next = null;                        // sever the connection to the old tail but setting the next to null
+            this.tail.prev = null;                      // also sever old tail to the previous node
+            this.tail = newTail;                        // finally set the tail to the newtail
+        }
+
+        this.length--;                                  // decrement
+        return poppedTail;                                    
+    }
 
 
 
+    // pop(){
+    //     if(!this.head) return undefined;
 
+    //     var poppedTail = this.tail;
+
+    //     if(this.length === 1){                        
+    //         this.head = null;
+    //         this.tail = null;
+    //     } else {
+        
+    //         this.tail = poppedTail.prev;
+    //         this.tail.next = null;
+    //         poppedTail.prev = null;
+    //     }
+
+    //     this.length--;                                 
+    //     return poppedTail;                                    
+    // }  
 
 
     print(){
@@ -51,7 +85,7 @@ class DoublyLinkedList {                               // doubly linked class
         }
         console.log(arr)
     }
-    
+
 }
 
 
