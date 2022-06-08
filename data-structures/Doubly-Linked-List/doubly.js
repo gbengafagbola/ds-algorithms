@@ -181,6 +181,17 @@ class DoublyLinkedList {                               // doubly linked class
         return current;
     }
 
+    set(index, val){                                                // check singly while employ get method
+        var foundNode = this.get(index);
+
+        if(foundNode){
+            foundNode.val = val;
+            return true;
+        }
+
+        return false; 
+    }
+
     print(){
         var arr = [];
         var current = this.head;
