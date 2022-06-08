@@ -115,6 +115,43 @@ class DoublyLinkedList {                               // doubly linked class
     //         this.length--;                               // decrement 
     //         return shiftedHead;                          // return the shifted head
     // }
+
+
+    unshift(val){
+
+        var newHead = new Node(val);
+
+        if(this.length === 0){
+            this.head = newHead;
+            this.tail = newHead
+        }
+
+        newHead.next = this.head;                       // making a connection to the current head
+        this.head.prev = newHead;                       // same here making the previous point to the new head
+        this.head = newHead;                            // now declearing the head as the the new head
+
+        this.length++;
+        return this;
+    }
+
+
+    // unshift(val){
+
+    //     var newHead = new Node(val);
+
+    //     if(this.length === 0){
+    //         this.head = newHead;
+    //         this.tail = newHead
+    //     } else {
+    //         this.head.prev = newHead;
+    //         newHead.next = this.head;
+    //         this.head = newHead;
+    //     }
+
+    //     this.length++;
+    //     return this;
+
+    // }
     
     print(){
         var arr = [];
