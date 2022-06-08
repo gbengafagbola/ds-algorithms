@@ -260,3 +260,11 @@ list.push(2)
 list.push(3)
 list.push(4)
 list.push(5)
+
+
+
+// BIG O
+// Insertion - O(1)
+// Removal - O(1)
+// Searching O(N/2) -> O(N)  faster than singly
+// Access O(N)
