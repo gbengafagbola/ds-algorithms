@@ -153,6 +153,34 @@ class DoublyLinkedList {                               // doubly linked class
 
     // }
     
+
+    // try using multiple pointer 
+    get(index){
+        if(index < 0 || index >= this.length) return undefined;
+        
+        // from the start 
+        if(index <= this.length/2){                                 // by now you should get familiar with the approach, but
+        var count = 0;
+        var current = this.head;                                    // the jist is that since we have a 2-way traffic, we can improve the get functionality by check from both ends depending on the index
+
+        while(count !== index){
+            current = current.next;
+            count++; 
+            }
+
+        // from the end 
+        } else {
+            var count = this.length - 1;
+            var current = this.tail;
+
+            while(count !== index){
+                current = current.prev;
+                count--;
+            }
+        }
+        return current;
+    }
+
     print(){
         var arr = [];
         var current = this.head;
