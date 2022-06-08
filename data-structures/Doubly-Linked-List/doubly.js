@@ -192,6 +192,28 @@ class DoublyLinkedList {                               // doubly linked class
         return false; 
     }
 
+
+    insert(index, val){
+        if(index < 0 || index > this.length) return undefined;
+
+        var newNode = new Node(val);
+
+        if(index === 0) return this.unshift(newNode);
+
+        if(index === this.length) return this.push(newNode);
+
+        var targetNode = this.get(index-1);
+        var currentNode = targetNode.next;
+
+            targetNode.next = newNode;
+            newNode.prev = targetNode;
+            newNode.next = currentNode;
+            currentNode.prev = newNode;
+
+        this.length++;
+        return true;
+    }
+
     print(){
         var arr = [];
         var current = this.head;
