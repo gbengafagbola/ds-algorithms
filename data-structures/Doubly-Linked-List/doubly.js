@@ -268,3 +268,7 @@ list.push(5)
 // Removal - O(1)
 // Searching O(N/2) -> O(N)  faster than singly
 // Access O(N)
+
+
+// implementation: 
+// browser history
