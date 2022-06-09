@@ -54,3 +54,9 @@ list.push(3)
 list.push(4)
 list.push(5)
 
+
+// BIG O
+// Insertion O(1)
+// Removal O(1)
+// Searching O(N)
+// Access O(N)
