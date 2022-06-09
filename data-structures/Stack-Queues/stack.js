@@ -30,6 +30,19 @@ class Stack {
 
     }
 
+
+    pop(){
+        if(this.size === 0) return null;
+
+        var temp = this.first;                      // a temporary variable so save this.first
+        if(this.first === this.last){               // if only one node update last to null
+            this.last = null; 
+        }
+
+        this.first = this.first.next;
+        this.size--;
+        return temp.value;
+    }
 }
 
 
@@ -40,6 +53,4 @@ list.push(2)
 list.push(3)
 list.push(4)
 list.push(5)
-
-
 
