@@ -15,17 +15,16 @@ que = [3, 2, 1];
 // so we would add to the end(tail) of the list and remove from the begining(head)
 class Node {
     constructor(value){
-        this.value = this.value;
+        this.value = value;
         this.next = null
     }
 }
-
 
 class Queue {
     constructor(){
         this.first = null;
         this.last = null;
-        this.size;
+        this.size = 0;
     }
 
     enqueue(val){                           // this would add to the end of our list
@@ -38,11 +37,13 @@ class Queue {
             this.last.next = newNode;
             this.last = newNode;
         }
-        return ++this.size;
+
+        this.size++;
+        return this;
     }
 
     dequeue(){                              // this would remove from the begining of our list
-        if(!this.first) return null;
+        if(this.size === 0) return null;
 
         var temp = this.first;
 
@@ -51,6 +52,21 @@ class Queue {
         } 
         this.first = this.first.next;
         this.size--;
-        return temp.value;
+        return temp;
     }
 }
+
+
+var list = new Queue()
+list.enqueue(1)
+list.enqueue(2)
+list.enqueue(3)
+list.enqueue(4)
+list.enqueue(5)
+
+
+// BIG O
+// Insertion: O(1)
+// Removal: Best O(1)  
+// Searching: O(N)
+// Access: O(N)
