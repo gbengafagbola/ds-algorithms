@@ -42,6 +42,26 @@ class BinarySearchTree {
             }
         }
     }
+
+    search(value){
+        if(this.root === null) return false;                   // if no node return false
+
+        var current = this.root;                               // the node we looking at 
+        var found = false;                                     // to track if node as been found
+
+        while(current && !found){                              // for as long as we have a node to look at and check if the node has been found
+            if(value < current.value){
+                current = current.left;
+            } else if (value > current.value){
+                current = current.right;
+            } else {
+                found = true
+            }
+        } 
+
+        if(!found) return undefined;
+        return current;
+    }
 }
 
 
