@@ -63,6 +63,23 @@ class BinarySearchTree {
         return current;
     }
 
+    BFS(){
+        var data = [];                                  // what we would return at the end
+        var queue = [];                                 // would help us keep track of what comes next
+        var node = this.root;                           // we made the node the root
+        
+        queue.push(node);                               // and we pushed it into the queue
+
+        while(queue.length){                            // while queue is not empty
+            node = queue.shift();                       // now we make node equals to the node we remove from the begining of the list
+            data.push(node.value);                      // we now push the node inside the data array we would return
+
+            if(node.left) queue.push(node.left);
+            if(node.right) queue.push(node.right);
+        }
+
+        return data;
+    }
 }
 
 
