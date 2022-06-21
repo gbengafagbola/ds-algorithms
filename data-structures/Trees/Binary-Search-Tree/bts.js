@@ -80,6 +80,19 @@ class BinarySearchTree {
 
         return data;
     }
+
+    DFSPreOrder(){
+        var data = [];
+
+        function traverse(node){                        // a recursive function that starts with the root node and moves it way downward recursively 
+            data.push(node.value);
+            if(node.left) traverse(node.left);
+            if(node.right) traverse(node.right);
+        }
+
+        traverse(this.root);
+        return data;
+    }
 }
 
 
