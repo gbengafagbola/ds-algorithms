@@ -62,6 +62,7 @@ class BinarySearchTree {
         if(!found) return undefined;
         return current;
     }
+
 }
 
 
@@ -82,3 +83,10 @@ tree.insert(7);
 //          10
 //        5     13
 //      2  7   11  16
+
+
+//  BIG O
+// insertion O(logn)
+// searching O(logn)
+
+// although not guaranteed for the worst case
