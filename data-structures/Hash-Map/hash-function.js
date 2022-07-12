@@ -123,3 +123,10 @@ hashTable.set("hello world 2", "world 2");
 hashTable.set("hello world 3", "world 3");
 hashTable.set("hello world 4", "world 4");
 hashTable.set("hello world 5", "world 5");
+
+
+
+// BIG O
+// Insertion - O(1)
+// Removal - O(1)
+// Access O(1)
