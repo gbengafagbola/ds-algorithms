@@ -31,13 +31,86 @@ class Graph {
         }
         delete this.adjancencyList[vertex];
     }
+
+    depthFirstRecursive(start){
+        const result = [];
+        const visited = {};
+        const adjancencyList = this.adjancencyList;
+
+        (function dfs(vertex){
+            if(!vertex) return null;
+            visited[vertex] = true;
+            result.push(vertex);
+            adjancencyList[vertex].forEach(neighbor => {
+                if(!visited[neighbor]){
+                    return dfs(neighbor)
+                }
+            })
+        })(start);
+        return result;
+    }
+
+    depthFirstIterative(start){
+        const result = [];
+        const visited = {};
+        const stack = [start];
+        let currentVertex;
+
+        visited[stack] = true;
+        while(stack.length){
+            currentVertex = stack.pop();
+            result.push(currentVertex);
+
+            this.adjancencyList[currentVertex].forEach(neighbor => {
+                if(!visited[neighbor]){
+                    visited[neighbor] = true;
+                    stack.push(neighbor)
+                }
+            });
+        }
+        return result; 
+    }
+
+
+    breathFirst(start){
+        const queue = [start];
+        const result = [];
+        const visited = {};
+        visited[start] = true;
+        let currentVertex;
+
+        while(queue.length){
+            let currentVertex = queue.shift();
+            result.push(currentVertex);
+
+            this.adjancencyList[currentVertex].forEach(neighbor => {
+                if(!visited[neighbor]){
+                    visited[neighbor] = true;
+                    stack.push(neighbor)
+                }
+            });
+        }
+        return result;
+    }
+
 }
 
 
 let graph = new Graph();
 
-graph.addVertex("Lagos")
-graph.addVertex("Dublin")
-graph.addVertex("Ontario")
-graph.addVertex("Berlin")
-graph.addVertex("London")
+graph.addVertex("A")
+graph.addVertex("B")
+graph.addVertex("C")
+graph.addVertex("D")
+graph.addVertex("E")
+graph.addVertex("F")
+
+graph.addEdge("A","B")
+graph.addEdge("A","C")
+graph.addEdge("B","D")
+graph.addEdge("C","E")
+graph.addEdge("D","E")
+graph.addEdge("D","F")
+graph.addEdge("E","F")
+
+graph.depthFirstRecursive("A")
