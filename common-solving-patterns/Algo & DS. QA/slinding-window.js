@@ -7,7 +7,12 @@ let findMaxSlidingWindow = function(nums, windowSize) {
     if(nums.length == 0) {
         return result;
       }
-      
+
+    //   if windown size is greater than nums array
+      if (windowSize > nums.length) {
+        windowSize = nums.length;
+      }  
+
     //Write your code
     let i = 0;
     let j = windowSize;
