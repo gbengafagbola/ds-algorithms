@@ -28,6 +28,19 @@ let findMaxSlidingWindow = function(nums, windowSize) {
   };
 
 
+  // their approach my code
+// let findMaxSlidingWindow2 = function(nums, windowSize) {
+
+//   let window = [0];
+//   let result = [];
+
+
+
+
+// }
+
+
+
   // Given an array of integers, find the pair of adjacent elements that has the largest product and return that product.
   // credit: codesignal.com
 
