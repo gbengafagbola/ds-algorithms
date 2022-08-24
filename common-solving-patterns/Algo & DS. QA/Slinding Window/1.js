@@ -1,6 +1,3 @@
-// Given an integer array and a window of size w, find the current maximum value in the window as it slides through the entire array.
-// question credit: educative.io, https://www.educative.io/module/lesson/data-structures-in-javascript/xlD0J44Pzqq
-
 // My 1st approach - solution
 let findMaxSlidingWindow = function(nums, windowSize) {
   // instantiate an empty array that would be retured later 
